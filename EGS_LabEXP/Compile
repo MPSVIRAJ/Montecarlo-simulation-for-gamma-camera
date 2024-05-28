@@ -1,0 +1,17 @@
+rm -f EGSnrc
+cat  main.for  nrc_init.for  randomnminit.for ranlux.for \
+     runparinit.for  runmatinit.for  rungeominit.for  runsxinit.for      \
+     kgeom.for  histin.for  HATCH.for  mscati.for  init_ms_SR.for        \
+     init_spin.for  EDGSET.for  init_compton.for  fix_brems.for          \
+     init_nist_brems.for  gauss_legendre.for  set_spline.for             \
+     prepare_alias_table.for  vmc_electron.for  evinit.for  source.for   \
+     SHOWER.for  UPHI.for  ausgab.for  ELECTR.for  msdist_pII.for        \
+     msdist_pI.for  mscat.for  sscat.for  MOLLER.for  BHABHA.for         \
+     ANNIH.for  BREMS.for  howfar.for hownear.for  PHOTON.for  PAIR.for  \
+     COMPT.for  PHOTO.for  RELAX.for  evsum.for  hitorder.for            \
+     tuplesetup.for  >  EGS4_NRC.for
+
+gfortran -O3 -C EGS4_NRC.for -o EGSnrc
+#gfortran -O3 -C EGS4_NRC.for -o EGSnrc
+#gfortran -O3 -C EGS4_NRC.for ./lib/libkernlib.a -o EGSnrc
+#gfortran -lnsl -O3 -C EGS4_NRC.for ./lib/libgrafX11.a  ./lib/libgraflib.a ./lib/libmathlib.a ./lib/libpacklib.a ./lib/libkernlib.a -o EGSnrc
